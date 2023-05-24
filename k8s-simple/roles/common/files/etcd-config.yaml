@@ -1,0 +1,5 @@
+etcd:
+  host:
+    - "http://etcd01.com.tw:2379"
+    - "http://etcd02.com.tw:2379"
+    - "http://etcd03.com.tw:2379"

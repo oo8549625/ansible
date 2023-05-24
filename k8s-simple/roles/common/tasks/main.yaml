@@ -1,0 +1,11 @@
+---
+- name: Test connection
+  ansible.builtin.ping:
+  register: message
+- name: Print debug message
+  ansible.builtin.debug:
+    msg: "{{ message }}"
+
+- name: Replace etcd URLs
+  ansible.builtin.script: replace_etcd_urls.sh "{{ etcd_urls }}"
+  tags: etcd
