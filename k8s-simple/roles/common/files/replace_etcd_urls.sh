@@ -10,9 +10,9 @@ if [ ${#TARGETS[@]} -ne ${#SOURCES[@]} ]; then
 fi
 
 for index in "${!SOURCES[@]}"; do
-    echo SOURCES[$index]
     # macos
     sed -i "" "s~${SOURCES[$index]}~${TARGETS[$index]}~" ${CONFIG_PATH}
+    
     # linux
     # sed -i "s~${SOURCES[$index]}~${TARGETS[$index]}~" ${CONFIG_PATH}
 done
