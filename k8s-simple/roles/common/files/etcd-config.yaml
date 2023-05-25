@@ -1,5 +1,5 @@
-etcd:
-  host:
-    - "http://test01.io:2379"
-    - "http://test02.io:2379"
-    - "http://test03.io:2379"
+  etcd:
+    host:
+      - "http://test01.io:2379"
+      - "http://test02.io:2379"
+      - "http://test03.io:2379"
