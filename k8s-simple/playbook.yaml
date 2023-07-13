@@ -1,4 +1,0 @@
----
-- hosts: '{{ hosts_name }}'
-  roles:
-    - common
