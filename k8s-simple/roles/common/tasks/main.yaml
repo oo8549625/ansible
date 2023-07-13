@@ -6,6 +6,20 @@
   ansible.builtin.debug:
     msg: "{{ message }}"
 
-- name: Replace etcd URLs
-  ansible.builtin.script: replace_etcd_urls.sh "{{ etcd_urls }}"
-  tags: etcd
+# - name: Replace etcd URLs
+#   ansible.builtin.script: replace_etcd_urls.sh "{{ etcd_urls }}"
+#   tags: etcd
+
+- name: replace version tags
+  ansible.builtin.replace:
+    path: /Users/yeliwei/Downloads/docker-compose/nbadm.docker-compose.yml
+    regexp: 'spinach.azurecr.io/nbcdn/nbedge_admin:(.+)'
+    replace: 'spinach.azurecr.io/nbcdn/nbedge_admin:{{nbadm_version_tag}}'
+
+- name: Run `docker-compose up` again
+  ansible.builtin.shell: docker-compose -f /Users/yeliwei/Downloads/docker-compose/transfer.docker-compose.yml up -d
+  register: output
+
+- name: Print output message
+  ansible.builtin.debug:
+    msg: "{{ output }}"

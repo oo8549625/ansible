@@ -1,8 +1,4 @@
-- name: My first play
-  hosts: k8s
-  tasks:
-   - name: Ping my hosts
-     ansible.builtin.ping:
-   - name: Print message
-     ansible.builtin.debug:
-       msg: Hello world
+---
+- hosts: '{{ hosts_name }}'
+  roles:
+    - common
