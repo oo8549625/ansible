@@ -1,21 +1,27 @@
 ---
-- name: Test connection
-  ansible.builtin.ping:
-  register: message
+# - name: Test connection
+#   ansible.builtin.ping:
+#   register: message
+
+- name: check if inventory changed
+  script: diff.sh
+  register: inventory_result
+  become_user: admin
+
 - name: Print debug message
   ansible.builtin.debug:
-    msg: "{{ message }}"
+    msg: "{{ inventory_result }}"
 
 # - name: Replace etcd URLs
 #   ansible.builtin.script: replace_etcd_urls.sh "{{ etcd_urls }}"
 #   tags: etcd
 
-- name: replace version tags
-  ansible.builtin.replace:
-    path: /Users/yeliwei/Downloads/docker-compose/nbadm.docker-compose.yml
-    regexp: 'spinach.azurecr.io/nbcdn/nbedge_admin:(.+)'
-    replace: 'spinach.azurecr.io/nbcdn/nbedge_admin:{{version}}'
-  when: version != ""
+# - name: replace version tags
+#   ansible.builtin.replace:
+#     path: /Users/yeliwei/Downloads/docker-compose/nbadm.docker-compose.yml
+#     regexp: 'spinach.azurecr.io/nbcdn/nbedge_admin:(.+)'
+#     replace: 'spinach.azurecr.io/nbcdn/nbedge_admin:{{version}}'
+#   when: version != ""
 
 # - name: Run `docker-compose up` again
 #   ansible.builtin.shell: docker-compose -f /Users/yeliwei/Downloads/docker-compose/transfer.docker-compose.yml up -d

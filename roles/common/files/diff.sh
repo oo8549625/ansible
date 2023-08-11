@@ -1,0 +1,1 @@
+diff -q /Users/yeliwei/Downloads/github/ansible/roles/common/files/a.log /Users/yeliwei/Downloads/github/ansible/roles/common/files/b.log
