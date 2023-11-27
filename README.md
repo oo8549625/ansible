@@ -1,6 +1,7 @@
 ## ansbile
 
 資料夾結構
+
 inventory: 存放機器資訊
 
 playbooks: 定義任務流
