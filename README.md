@@ -10,7 +10,7 @@ roles: 定義任務
 
 ansible.cfg: ansible的相關配置, 包含inventory, role路徑指定等等
 
-### 驗證inventories -> hosts.yaml
+### 驗證inventory
 ```bash
 # 檢查機器資訊配置正確
 ansible-inventory --list
