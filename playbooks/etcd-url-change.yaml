@@ -1,0 +1,6 @@
+---
+- name: Changeing etcd url
+  hosts: "{{ hosts_name }}"
+  remote_user: root
+  roles:
+    - etcd-url-change

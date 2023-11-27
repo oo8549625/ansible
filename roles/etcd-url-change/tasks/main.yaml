@@ -1,0 +1,7 @@
+---
+- name: location
+  shell: pwd
+  
+- name: Replace etcd URLs
+  script: replace_etcd_urls.sh "{{ etcd_urls }}"
+  tags: etcd

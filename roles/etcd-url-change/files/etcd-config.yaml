@@ -1,0 +1,5 @@
+  etcd:
+    host:
+      - "http://testa1.com:2379"
+      - "http://testa2.com:2379"
+      - "http://testa3.com:2379"

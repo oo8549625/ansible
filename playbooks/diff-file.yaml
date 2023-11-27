@@ -1,0 +1,6 @@
+---
+- name: Diff file
+  hosts: "{{ hosts_name }}"
+  remote_user: root
+  roles:
+    - diff-file

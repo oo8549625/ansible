@@ -3,4 +3,4 @@
   hosts: "{{ hosts_name }}"
   remote_user: root
   roles:
-    - common
+    - ping

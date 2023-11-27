@@ -1,0 +1,9 @@
+---
+- name: check if inventory changed
+  script: diff.sh
+  register: inventory_result
+  ignore_errors: true
+
+- name: check rc value
+  debug:
+    msg: "{{ inventory_result }}"

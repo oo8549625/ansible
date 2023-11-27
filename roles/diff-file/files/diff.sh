@@ -1,0 +1,1 @@
+diff -q ../roles/diff-file/files/a.log ../roles/diff-file/files/b.log
